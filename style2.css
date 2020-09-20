@@ -1,0 +1,94 @@
+body {
+	background-color: white;
+
+	width:80%;  
+	padding-left: 10%;
+}
+.grid {
+    max-width: 960 px;
+    margin: 0 auto;
+	grid-template-columns: 1fr;
+    display: grid;
+   
+}
+.menu {
+    position: fixed; /* Фиксированное положение */
+    right: 0px; /* Расстояние от правого края окна браузера */
+    top: 0%; /* Расстояние сверху */
+    padding: 10px; /* Поля вокруг текста */ 
+    background: white; /* Цвет фона */ 
+    border: 1px ; /* Параметры рамки */ 
+	border-color: white;
+	text-align: center;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	width: 100%; /* Ширина слоя */
+
+   }
+   
+   
+
+
+.pagination {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.pagination-number {
+    padding: 0.5em 0.8em;
+    border-radius: 2px;
+    color: #fff;
+    background-color: #6D85C7;
+}
+
+.pagination-number:hover, .pagination-current {
+    background-color: #3354AA;      
+}
+
+.pagination-action {
+    margin: 0 0.1em;
+    display: inline-block;
+    padding: 0.5em 0.5em;
+    color: #B9B9B9;
+    font-size: 1.3em;
+}
+
+.pagination-action:hover, .pagination-previous, .pagination-next {
+    color: #3354AA;  
+}
+
+
+
+}
+	
+.text1 {
+	 text-align: center;
+	
+	
+}
+footer {
+    position: fixed; /* Фиксированное положение подвала */
+    left: 0; bottom: 0; /* Левый нижний угол */
+    padding: 10px; /* Поля вокруг текста */
+    background: white; /* Цвет фона */
+    color: #fff; /* Цвет текста */
+    width: 100%; /* Ширина слоя */
+}
+
+.box {
+  display: grid;
+  
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr ));
+  grid-gap: 10px 2em;
+
+ }
+ 
+.box2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px 2em;
+}
+
+.box4 :first-child {
+    align-self: center;
+}
+
