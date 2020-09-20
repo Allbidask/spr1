@@ -1,0 +1,75 @@
+{% extends "article/base.html" %}
+
+<head>
+{% block title %}
+
+{% endblock %} 
+
+{% block body %}
+<body >
+  {% load static %}
+
+
+
+<h1> _ </h1>
+<h1>Новини розробки</h1>
+
+  {% load static %}
+
+<div class="box" >
+
+ {% for article in articles %}
+
+  <table>
+  <tr class="box1" >
+      <tr> <td >  <img style="width: 100%;"  src="{% static 'article/img_article/' %}{{ article.id }}.jpg" alt="Card image cap"></td>  </tr>
+ 
+   <tr><td class="col17"><b> <a href="{% url 'article_full' article.id  %}">{{ article.article_title }}</a></b></td></tr>
+   
+ <!--<tr> <td class="col17"> {{ article.id }}</td>  </tr>-->
+
+ <tr> <td class="col17"> {{ article.article_date }}</td>  </tr>
+ <tr><td class="col37">  </tr>
+  </table>
+
+	{% endfor %}
+	
+</div>
+	
+
+<div class="pagination">
+
+  {% if articles.has_previous %}
+    <a class="pagination-action" href="?startova=1">
+     <i class="fa fa-angle-double-left" aria-hidden="true">first</i>
+    </a>
+    <a class="pagination-action" href="?startova={{ articles.previous_page_number }}">
+      <i class="fa fa-angle-left" aria-hidden="true"></i>
+    </a>
+  {% endif %}
+
+  {% for num in articles.paginator.page_range %}
+
+    {% if articles.number == num %}
+    <span class="pagination-number pagination-current">{{ num }}</span>
+    {% elif num > articles.number|add:'-3' and num < articles.number|add:'3' %}
+    <a class="pagination-number" href="?startova={{ num }}">{{ num }}</a>
+    {% endif %}
+
+  {% endfor %}
+
+  {% if articles.has_next %}
+    <a class="pagination-action" href="?startova={{ articles.next_page_number }}">
+      <i class="fa fa-angle-right" aria-hidden="true"></i>
+    </a>
+    <a class="pagination-action" href="?startova={{ articles.paginator.num_pages }}">
+      <i class="fa fa-angle-double-right" aria-hidden="true">last</i>
+    </a>
+  {% endif %}
+{% endblock %} 
+</div>
+
+
+
+</body>
+</html>
